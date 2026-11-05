@@ -6,10 +6,11 @@ Caso 1: Procesamiento Masivo de Datos en Tiempo Real con Apache Spark (Scala / J
     Qué ventaja les da el enfoque funcional: Spark se basa fuertemente en estructuras de datos inmutables y operaciones de orden superior (map, filter, reduce, flatMap). Al pasar funciones anónimas (lambdas) como parámetros a estas operaciones, el código de transformaciones se vuelve altamente declarativo. Spark puede distribuir este código de manera transparente a través de cientos de nodos en la nube sabiendo que, al ser funciones puras sin efectos secundarios colaterales, la ejecución paralela es segura y tolerante a fallos.
     Ejemplo de código real (Repositorio de GitHub):
 En el repositorio oficial de ejemplos de Apache Spark, las operaciones sobre colecciones distribuidas (RDDs o DataFrames) utilizan funciones anónimas constantemente. Por ejemplo, filtrando registros de logs:
-'''scala'''
+
+'''scala
 // Ejemplo inspirado en Apache Spark (Scala)
 val logLines = sc.textFile("hdfs://etl/logs/access.log")
 // La función anónima (line => ...) filtra las líneas que contienen errores 500
 val errorLogs = logLines.filter(line => line.contains("ERROR 500"))
 val errorCount = errorLogs.count()
-  '''scala'''
+'''
