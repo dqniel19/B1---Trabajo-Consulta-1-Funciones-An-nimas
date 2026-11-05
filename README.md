@@ -2,6 +2,14 @@ Trabajo de Consulta: Funciones Anónimas
 Parte 1 – Explorar: la programación funcional en el mundo real
 Busca 2 casos reales que usen programación funcional o funciones anónimas.
 Caso 1: Procesamiento Masivo de Datos en Tiempo Real con Apache Spark (Scala / Java)
-    Qué problema resuelven: Las grandes empresas tecnológicas, financieras y de comercio electrónico procesan petabytes de datos distribuidos en clústeres de computadoras (por ejemplo, análisis de registros de clics de usuarios, motores de recomendación o detección de fraude en milisegundos). El reto es transformar, filtrar y agregar volúmenes masivos de datos de manera eficiente sin bloquear los hilos de ejecución.Qué lenguaje o herramienta usan: Apache Spark, un motor de análisis unificado escrito principalmente en Scala (que también ofrece APIs para Java y Python).   Qué ventaja les da el enfoque funcional: Spark se basa fuertemente en estructuras de datos inmutables y operaciones de orden superior (map, filter, reduce, flatMap). Al pasar funciones anónimas (lambdas) como parámetros a estas operaciones, el código de transformaciones se vuelve altamente declarativo. Spark puede distribuir este código de manera transparente a través de cientos de nodos en la nube sabiendo que, al ser funciones puras sin efectos secundarios colaterales, la ejecución paralela es segura y tolerante a fallos.Ejemplo de código real (Repositorio de GitHub):
+    Qué problema resuelven: Las grandes empresas tecnológicas, financieras y de comercio electrónico procesan petabytes de datos distribuidos en clústeres de computadoras (por ejemplo, análisis de registros de clics de usuarios, motores de recomendación o detección de fraude en milisegundos). El reto es transformar, filtrar y agregar volúmenes masivos de datos de manera eficiente sin bloquear los hilos de ejecución.Qué lenguaje o herramienta usan: Apache Spark, un motor de análisis unificado escrito principalmente en Scala (que también ofrece APIs para Java y Python).   
+    Qué ventaja les da el enfoque funcional: Spark se basa fuertemente en estructuras de datos inmutables y operaciones de orden superior (map, filter, reduce, flatMap). Al pasar funciones anónimas (lambdas) como parámetros a estas operaciones, el código de transformaciones se vuelve altamente declarativo. Spark puede distribuir este código de manera transparente a través de cientos de nodos en la nube sabiendo que, al ser funciones puras sin efectos secundarios colaterales, la ejecución paralela es segura y tolerante a fallos.
+    Ejemplo de código real (Repositorio de GitHub):
 En el repositorio oficial de ejemplos de Apache Spark, las operaciones sobre colecciones distribuidas (RDDs o DataFrames) utilizan funciones anónimas constantemente. Por ejemplo, filtrando registros de logs:
-  
+'''scala'''
+// Ejemplo inspirado en Apache Spark (Scala)
+val logLines = sc.textFile("hdfs://etl/logs/access.log")
+// La función anónima (line => ...) filtra las líneas que contienen errores 500
+val errorLogs = logLines.filter(line => line.contains("ERROR 500"))
+val errorCount = errorLogs.count()
+  '''scala'''
