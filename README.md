@@ -7,10 +7,10 @@ Caso 1: Procesamiento Masivo de Datos en Tiempo Real con Apache Spark (Scala / J
     Ejemplo de código real (Repositorio de GitHub):
 En el repositorio oficial de ejemplos de Apache Spark, las operaciones sobre colecciones distribuidas (RDDs o DataFrames) utilizan funciones anónimas constantemente. Por ejemplo, filtrando registros de logs:
 
-'''scala
+```scala
 // Ejemplo inspirado en Apache Spark (Scala)
 val logLines = sc.textFile("hdfs://etl/logs/access.log")
 // La función anónima (line => ...) filtra las líneas que contienen errores 500
 val errorLogs = logLines.filter(line => line.contains("ERROR 500"))
 val errorCount = errorLogs.count()
-'''
+```
