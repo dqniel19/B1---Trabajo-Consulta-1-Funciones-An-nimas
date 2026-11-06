@@ -324,3 +324,17 @@ A continuación se presenta la tabla comparativa con base en la implementación 
 Las funciones anónimas (*lambdas*) constituyen la piedra angular de la programación funcional moderna, ya que transforman la manipulación de listas y colecciones de un enfoque imperativo (enfocado en *cómo* hacer las cosas mediante bucles y control de índices) a un enfoque declarativo (enfocado en *qué* datos se desean obtener). Esta capacidad de tratar a las funciones como ciudadanos de primera clase simplifica la lógica y reduce drásticamente la cantidad de código repetitivo.
 
 La importancia de este paradigma se evidencia claramente en herramientas industriales analizadas en la Parte 1, como **Apache Spark** (desarrollado en Scala), donde las funciones anónimas permiten aplicar transformaciones distribuidas sobre petabytes de datos de manera segura, concurrente y libre de efectos secundarios. De igual manera, en librerías científicas como **Pandas** en Python, el uso de expresiones lambda optimiza el procesamiento analítico de grandes conjuntos de datos. En conclusión, dominar las funciones anónimas no solo optimiza la legibilidad del código universitario, sino que es un requisito indispensable para el desarrollo de software escalable en el ámbito profesional y de análisis de datos.
+
+## Evidencias de Ejecución
+
+### 1. Scala (Parte 3)
+![Salida en Scala](img/scala_output.PNG)
+
+### 2. Java (Parte 3)
+![Salida en Java](img/java_output.PNG)
+
+### 3. Python (Parte 3)
+![Salida en Python](img/python_output.PNG)
+
+### 4. Operaciones Nuevas (Parte 4)
+![Salida Operaciones Nuevas](img/NuevasOperaciones_output.PNG)
